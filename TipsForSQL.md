@@ -1,40 +1,43 @@
-TIPS FOR SQL:
+# SQL Query Rules:
+    COMMANDS ALWAYS CALLED IN THIS ORDER:
+        SELECT
+        FROM
+        JOIN
+        WHERE
+        GROUP BY
+        HAVING
+        ORDER BY;
 
-COMMANDS ALWAYS CALLED IN THIS ORDER:
-SELECT
-FROM
-JOIN
-WHERE
-GROUP BY
-HAVING
-ORDER BY;
+    Example:
+        SELECT name, age
+        FROM Sailors
+        WHERE Age > 18
 
-EXAMPLE:
-SELECT name, age
-FROM users
-WHERE age > 18
-
-TO CREATE A TABLE:
+# CREATE TABLE:
     CREATE TABLE table_name (
         column1_name column1_datatype,
         column2_name column2_datatype,
         ...
     );
 
-Primary Key: a unique identifier for each record in a table.
-    example:
-        sid INT PRIMARY KEY
+# Primary Key: 
+    A unique identifier for each record in a table.
+    Example:
+        Sid INT PRIMARY KEY
 
-Foreign Key: links tables together by referencing the PK of another table.
-    example: 
-        sid INT, FOREIGN KEY (sid) REFERENCES students(sid)
+# Foreign Key: 
+    Links tables together by referencing the PK of another table.
+    Example: 
+        FOREIGN KEY (Sid) REFERENCES Sailors(Sid),
 
-Constraints: rules applied to columns to enforce data integrity.
-    example:
-        age 
-        age INT CHECK (age > 0)
+# Constraints: 
+    Rules applied to columns to enforce data integrity.
+    Examples:
+        Sid INT PRIMARY KEY,
+        Age INT CHECK (age > 0),
+        FOREIGN KEY (Sid) REFERENCES Sailors(Sid);
 
-JOIN TYPES:
+# JOIN TYPES:
 1. INNER JOIN: returns records that have matching values in both tables.
 
 2. LEFT JOIN: returns all records from the left table, and the matched records from the
