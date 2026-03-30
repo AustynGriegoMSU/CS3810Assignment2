@@ -1,4 +1,9 @@
--- Create Tables --
+-- Assignment 2 
+-- Austyn Griego 
+-- CS3810 Database Structures
+-- Date: 03/30/2026
+
+-- Create Tables
 CREATE TABLE Sailors (
     sid INT PRIMARY KEY,
     sname VARCHAR(50) NOT NULL,
@@ -21,7 +26,7 @@ CREATE TABLE Reservation (
     FOREIGN KEY (bid) REFERENCES Boats(bid)
 );
 
--- Insert Data --
+-- Insert Data
 INSERT INTO Sailors (sid, sname, rating, age) VALUES
 (001, 'Popeye'  , 8, 45),
 (002, 'Gulligan', 5, 19),
@@ -48,7 +53,8 @@ INSERT INTO Reservation (sid, bid, date) VALUES
 (004, 2007, '2008-05-01'),
 (004, 2008, '2012-08-01');
 
--- Query --
+-- Query
+-- Returns Sailors older than 20, who haven't reserved a red boat
 SELECT s.sname, s.sid, s.age, s.rating
 FROM Sailors s
 WHERE s.age > 20
